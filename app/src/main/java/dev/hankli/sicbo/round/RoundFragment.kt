@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import dev.hankli.sicbo.R
+import dev.hankli.sicbo.SharedViewModel
 import dev.hankli.sicbo.databinding.FragmentRoundBinding
 
 class RoundFragment : Fragment(R.layout.fragment_round) {
 
-    private val viewModel: RoundViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private var _binding: FragmentRoundBinding? = null
     private val binding get() = _binding!!

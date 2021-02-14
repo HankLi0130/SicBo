@@ -1,9 +1,7 @@
 package dev.hankli.sicbo.round
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -21,6 +19,11 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
     private val binding get() = _binding!!
 
     private val roundAdapter = RoundAdapter()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,21 +51,26 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
                 DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL)
             )
         }
+    }
 
-        binding.floatingButton.setOnClickListener {
-            findNavController().navigate(
-                RoundFragmentDirections.actionRoundFragmentToEditRoundFragment()
-            )
-        }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.fragment_round, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
-        binding.bottomAppBar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.clear_all -> {
-                    sharedViewModel.removeAllRounds()
-                    true
-                }
-                else -> false
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.add_round -> {
+                findNavController().navigate(
+                    RoundFragmentDirections.actionRoundFragmentToEditRoundFragment()
+                )
+                true
             }
+            R.id.clear_all -> {
+                sharedViewModel.removeAllRounds()
+                true
+            }
+            else -> false
         }
     }
 

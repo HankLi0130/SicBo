@@ -1,7 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/first_dice"
+        android:layout_width="@dimen/distance_48_dp"
+        android:layout_height="@dimen/distance_48_dp"
+        app:layout_constraintBottom_toBottomOf="@id/second_dice"
+        app:layout_constraintEnd_toStartOf="@id/second_dice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/second_dice"
+        tools:src="@drawable/ic_dice_one" />
+
+    <ImageView
+        android:id="@+id/second_dice"
+        android:layout_width="@dimen/distance_48_dp"
+        android:layout_height="@dimen/distance_48_dp"
+        app:layout_constraintBottom_toTopOf="@+id/dice_group"
+        app:layout_constraintEnd_toStartOf="@+id/thrid_dice"
+        app:layout_constraintStart_toEndOf="@+id/first_dice"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_dice_two" />
+
+    <ImageView
+        android:id="@+id/thrid_dice"
+        android:layout_width="@dimen/distance_48_dp"
+        android:layout_height="@dimen/distance_48_dp"
+        app:layout_constraintBottom_toBottomOf="@id/second_dice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/second_dice"
+        app:layout_constraintTop_toTopOf="@id/second_dice"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="265dp"
+        tools:src="@drawable/ic_dice_three" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/dice_group"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dice_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/point_one"
+            app:chipIcon="@drawable/ic_dice_one" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dice_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/point_two"
+            app:chipIcon="@drawable/ic_dice_two" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dice_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/point_three"
+            app:chipIcon="@drawable/ic_dice_three" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dice_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/point_four"
+            app:chipIcon="@drawable/ic_dice_four" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dice_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/point_five"
+            app:chipIcon="@drawable/ic_dice_five" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dice_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/point_six"
+            app:chipIcon="@drawable/ic_dice_six" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        android:layout_marginStart="@dimen/distance_8_dp"
+        android:layout_marginEnd="@dimen/distance_8_dp"
+        android:text="@android:string/ok"
+        app:layout_constraintBottom_toBottomOf="@id/dice_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dice_group"
+        app:layout_constraintTop_toTopOf="@id/dice_group" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/distance_48_dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/dice_group"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="1" />
@@ -22,8 +21,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@id/round_number"
-        app:layout_constraintEnd_toStartOf="@id/sum"
-        app:layout_constraintStart_toStartOf="@id/round_number"
+        app:layout_constraintStart_toEndOf="@id/round_number"
         app:layout_constraintTop_toTopOf="@id/round_number">
 
         <ImageView
@@ -53,10 +51,10 @@
         android:id="@+id/sum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/distance_18_dp"
         android:textSize="@dimen/distance_48_dp"
         app:layout_constraintBottom_toBottomOf="@id/dice_group"
         app:layout_constraintEnd_toStartOf="@id/condition"
-        app:layout_constraintStart_toEndOf="@id/dice_group"
         app:layout_constraintTop_toTopOf="@id/dice_group"
         tools:text="6" />
 
@@ -64,10 +62,10 @@
         android:id="@+id/condition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/distance_18_dp"
         android:textSize="@dimen/distance_48_dp"
         app:layout_constraintBottom_toBottomOf="@id/dice_group"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/sum"
         app:layout_constraintTop_toTopOf="@id/dice_group"
         tools:text="小" />
 

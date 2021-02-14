@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import dev.hankli.sicbo.R
 import dev.hankli.sicbo.SharedViewModel
 import dev.hankli.sicbo.databinding.FragmentEditRoundBinding
@@ -43,6 +44,11 @@ class EditRoundFragment : Fragment(R.layout.fragment_edit_round) {
         binding.diceFour.setOnClickListener { selectDiceNumber(4) }
         binding.diceFive.setOnClickListener { selectDiceNumber(5) }
         binding.diceSix.setOnClickListener { selectDiceNumber(6) }
+
+        binding.submit.setOnClickListener {
+            sharedViewModel.addRound(selectedDice)
+            findNavController().popBackStack()
+        }
     }
 
     private fun selectDiceNumber(number: Int) {

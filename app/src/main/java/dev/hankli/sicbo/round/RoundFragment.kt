@@ -46,6 +46,11 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
                 RoundFragmentDirections.actionRoundFragmentToEditRoundFragment()
             )
         }
+
+        sharedViewModel.roundsData.observe(viewLifecycleOwner) {
+            roundAdapter.items = it
+            roundAdapter.notifyDataSetChanged()
+        }
     }
 
     override fun onDestroyView() {

@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dev.hankli.sicbo.model.Condition
-import dev.hankli.sicbo.model.Dice
 import dev.hankli.sicbo.model.Round
 
 class SharedViewModel : ViewModel() {
@@ -14,14 +13,14 @@ class SharedViewModel : ViewModel() {
     private val _roundsData = MutableLiveData<List<Round>>()
     val roundsData: LiveData<List<Round>> get() = _roundsData
 
-    fun addRound(dices: List<Dice>) {
-        val sum = dices.sumBy { it.number }
+    fun addRound(diceNumbers: IntArray) {
+        val sum = diceNumbers.sum()
         val condition = when (sum) {
             in 4..10 -> Condition.SMALL
             in 11..17 -> Condition.BIG
             else -> Condition.KILLING
         }
-        val round = Round(dices, sum, condition)
+        val round = Round(diceNumbers, sum, condition)
         addRound(round)
     }
 

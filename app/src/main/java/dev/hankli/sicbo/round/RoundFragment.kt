@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import dev.hankli.sicbo.R
 import dev.hankli.sicbo.SharedViewModel
 import dev.hankli.sicbo.databinding.FragmentRoundBinding
+import dev.hankli.sicbo.model.Round
 
 class RoundFragment : Fragment(R.layout.fragment_round) {
 
@@ -39,7 +40,9 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
         }
 
         binding.list.run {
-            adapter = roundAdapter
+            adapter = roundAdapter.apply {
+                removeItemListener = ::removeItem
+            }
             setHasFixedSize(true)
             addItemDecoration(
                 DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL)
@@ -61,6 +64,10 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
                 else -> false
             }
         }
+    }
+
+    private fun removeItem(round: Round) {
+        sharedViewModel.removeRound(round)
     }
 
     override fun onDestroyView() {

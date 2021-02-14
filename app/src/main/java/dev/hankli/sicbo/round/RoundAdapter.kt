@@ -11,6 +11,7 @@ import dev.hankli.sicbo.model.Round
 class RoundAdapter : RecyclerView.Adapter<RoundAdapter.ViewHolder>() {
 
     var items: List<Round> = emptyList()
+    lateinit var removeItemListener: (item: Round) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemRoundBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -18,7 +19,7 @@ class RoundAdapter : RecyclerView.Adapter<RoundAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(items[position], removeItemListener)
     }
 
     override fun getItemCount(): Int = items.size
@@ -26,13 +27,15 @@ class RoundAdapter : RecyclerView.Adapter<RoundAdapter.ViewHolder>() {
     class ViewHolder(private val binding: ItemRoundBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Round) {
+        fun bind(item: Round, removeItemListener: (item: Round) -> Unit) {
             binding.roundNumber.text = (absoluteAdapterPosition + 1).toString()
             binding.firstDice.setImageResource(getDiceRes(item.diceNumbers[0]))
             binding.secondDice.setImageResource(getDiceRes(item.diceNumbers[1]))
             binding.thridDice.setImageResource(getDiceRes(item.diceNumbers[2]))
             binding.sum.text = String.format("%2d", item.sum)
             binding.condition.setText(getConditionRes(item.condition))
+
+            binding.roundNumber.setOnClickListener { removeItemListener(item) }
         }
     }
 }

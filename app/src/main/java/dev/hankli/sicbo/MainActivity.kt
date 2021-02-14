@@ -22,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            if (destination.id == R.id.roundFragment) {
+                supportActionBar?.hide()
+            } else {
+                supportActionBar?.show()
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

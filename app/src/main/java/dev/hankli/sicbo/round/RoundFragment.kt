@@ -1,4 +1,4 @@
-package dev.hankli.sicbo
+package dev.hankli.sicbo.round
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import dev.hankli.sicbo.R
 import dev.hankli.sicbo.databinding.FragmentRoundBinding
 
 class RoundFragment : Fragment(R.layout.fragment_round) {
@@ -39,7 +41,9 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
         }
 
         binding.floatingButton.setOnClickListener {
-
+            findNavController().navigate(
+                RoundFragmentDirections.actionRoundFragmentToEditRoundFragment()
+            )
         }
     }
 

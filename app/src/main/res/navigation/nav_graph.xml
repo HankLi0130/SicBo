@@ -7,8 +7,18 @@
 
     <fragment
         android:id="@+id/roundFragment"
-        android:name="dev.hankli.sicbo.RoundFragment"
+        android:name="dev.hankli.sicbo.round.RoundFragment"
         android:label="RoundFragment"
-        tools:layout="@layout/fragment_round" />
+        tools:layout="@layout/fragment_round">
+        <action
+            android:id="@+id/action_roundFragment_to_editRoundFragment"
+            app:destination="@id/editRoundFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editRoundFragment"
+        android:name="dev.hankli.sicbo.round.EditRoundFragment"
+        android:label="EditRoundFragment"
+        tools:layout="@layout/fragment_edit_round" />
 
 </navigation>

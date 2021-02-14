@@ -1,8 +1,9 @@
-package dev.hankli.sicbo
+package dev.hankli.sicbo.round
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import dev.hankli.sicbo.R
 import dev.hankli.sicbo.model.Round
 import tw.hankli.brookray.core.extension.viewOf
 

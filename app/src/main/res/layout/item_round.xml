@@ -31,21 +31,21 @@
             android:layout_width="@dimen/distance_48_dp"
             android:layout_height="@dimen/distance_48_dp"
             android:layout_margin="@dimen/distance_3_dp"
-            tools:src="@mipmap/ic_launcher" />
+            tools:src="@drawable/ic_dice_one" />
 
         <ImageView
             android:id="@+id/second_dice"
             android:layout_width="@dimen/distance_48_dp"
             android:layout_height="@dimen/distance_48_dp"
             android:layout_margin="@dimen/distance_3_dp"
-            tools:src="@mipmap/ic_launcher" />
+            tools:src="@drawable/ic_dice_two" />
 
         <ImageView
             android:id="@+id/thrid_dice"
             android:layout_width="@dimen/distance_48_dp"
             android:layout_height="@dimen/distance_48_dp"
             android:layout_margin="@dimen/distance_3_dp"
-            tools:src="@mipmap/ic_launcher" />
+            tools:src="@drawable/ic_dice_three" />
 
     </LinearLayout>
 

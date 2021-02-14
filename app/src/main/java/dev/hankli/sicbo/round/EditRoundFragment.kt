@@ -46,6 +46,7 @@ class EditRoundFragment : Fragment(R.layout.fragment_edit_round) {
         binding.diceSix.setOnClickListener { selectDiceNumber(6) }
 
         binding.submit.setOnClickListener {
+            selectedDice.sort()
             sharedViewModel.addRound(selectedDice)
             findNavController().popBackStack()
         }

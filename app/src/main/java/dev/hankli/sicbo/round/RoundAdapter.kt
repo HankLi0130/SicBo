@@ -31,7 +31,7 @@ class RoundAdapter : RecyclerView.Adapter<RoundAdapter.ViewHolder>() {
             binding.firstDice.setImageResource(getDiceRes(item.diceNumbers[0]))
             binding.secondDice.setImageResource(getDiceRes(item.diceNumbers[1]))
             binding.thridDice.setImageResource(getDiceRes(item.diceNumbers[2]))
-            binding.sum.text = item.sum.toString()
+            binding.sum.text = String.format("%2d", item.sum)
             binding.condition.setText(getConditionRes(item.condition))
         }
     }

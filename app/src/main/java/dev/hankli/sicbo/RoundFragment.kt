@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import dev.hankli.sicbo.databinding.FragmentRoundBinding
 
 class RoundFragment : Fragment(R.layout.fragment_round) {
@@ -14,6 +15,8 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
 
     private var _binding: FragmentRoundBinding? = null
     private val binding get() = _binding!!
+
+    private val roundAdapter = RoundAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +30,17 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.list
+        binding.list.run {
+            adapter = roundAdapter
+            setHasFixedSize(true)
+            addItemDecoration(
+                DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL)
+            )
+        }
+
+        binding.floatingButton.setOnClickListener {
+
+        }
     }
 
     override fun onDestroyView() {

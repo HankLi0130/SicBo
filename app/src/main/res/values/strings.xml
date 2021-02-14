@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">SicBo</string>
+    <string name="app_name">骰寶紀錄</string>
+    <string name="big">大</string>
+    <string name="small">小</string>
 </resources>

@@ -33,6 +33,11 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sharedViewModel.roundsData.observe(viewLifecycleOwner) {
+            roundAdapter.items = it
+            roundAdapter.notifyDataSetChanged()
+        }
+
         binding.list.run {
             adapter = roundAdapter
             setHasFixedSize(true)
@@ -47,9 +52,14 @@ class RoundFragment : Fragment(R.layout.fragment_round) {
             )
         }
 
-        sharedViewModel.roundsData.observe(viewLifecycleOwner) {
-            roundAdapter.items = it
-            roundAdapter.notifyDataSetChanged()
+        binding.bottomAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.clear_all -> {
+                    sharedViewModel.removeAllRounds()
+                    true
+                }
+                else -> false
+            }
         }
     }
 

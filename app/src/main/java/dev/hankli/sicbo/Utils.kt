@@ -15,10 +15,18 @@ fun getDiceRes(number: Int): Int {
     }
 }
 
-fun getConditionRes(condition: Condition): Int {
+fun getConditionStringRes(condition: Condition): Int {
     return when (condition) {
-        Condition.BIG -> R.string.big
         Condition.SMALL -> R.string.small
+        Condition.BIG -> R.string.big
         Condition.KILLING -> R.string.killing
+    }
+}
+
+fun getConditionColorRes(condition: Condition): Int {
+    return when (condition) {
+        Condition.SMALL -> R.color.md_green_900
+        Condition.BIG -> R.color.md_red_900
+        Condition.KILLING -> R.color.md_yellow_A700
     }
 }

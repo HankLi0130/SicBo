@@ -2,9 +2,11 @@ package dev.hankli.sicbo.round
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import dev.hankli.sicbo.databinding.ItemRoundBinding
-import dev.hankli.sicbo.getConditionRes
+import dev.hankli.sicbo.getConditionColorRes
+import dev.hankli.sicbo.getConditionStringRes
 import dev.hankli.sicbo.getDiceRes
 import dev.hankli.sicbo.model.Round
 
@@ -33,7 +35,10 @@ class RoundAdapter : RecyclerView.Adapter<RoundAdapter.ViewHolder>() {
             binding.secondDice.setImageResource(getDiceRes(item.diceNumbers[1]))
             binding.thridDice.setImageResource(getDiceRes(item.diceNumbers[2]))
             binding.sum.text = String.format("%2d", item.sum)
-            binding.condition.setText(getConditionRes(item.condition))
+            binding.condition.apply {
+                setText(getConditionStringRes(item.condition))
+                setTextColor(ContextCompat.getColor(context, getConditionColorRes(item.condition)))
+            }
 
             binding.roundNumber.setOnClickListener { removeItemListener(item) }
         }

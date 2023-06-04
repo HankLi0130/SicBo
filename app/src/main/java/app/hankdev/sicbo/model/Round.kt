@@ -1,4 +1,4 @@
-package dev.hankli.sicbo.model
+package app.hankdev.sicbo.model
 
 data class Round(
     val diceNumbers: IntArray,

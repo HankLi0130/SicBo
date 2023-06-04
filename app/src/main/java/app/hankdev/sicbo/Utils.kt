@@ -1,7 +1,7 @@
-package dev.hankli.sicbo
+package app.hankdev.sicbo
 
+import app.hankdev.sicbo.model.Condition
 import app.hankdev.toolkit.NO_RESOURCE
-import dev.hankli.sicbo.model.Condition
 
 
 fun getDiceRes(number: Int): Int {

@@ -1,15 +1,20 @@
-package dev.hankli.sicbo.round
+package app.hankdev.sicbo.round
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import dev.hankli.sicbo.R
-import dev.hankli.sicbo.SharedViewModel
-import dev.hankli.sicbo.databinding.FragmentRoundBinding
-import dev.hankli.sicbo.model.Round
+import app.hankdev.sicbo.R
+import app.hankdev.sicbo.SharedViewModel
+import app.hankdev.sicbo.databinding.FragmentRoundBinding
+import app.hankdev.sicbo.model.Round
 
 class RoundFragment : Fragment(R.layout.fragment_round) {
 

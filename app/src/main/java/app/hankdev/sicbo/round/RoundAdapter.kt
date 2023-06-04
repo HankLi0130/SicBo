@@ -1,14 +1,14 @@
-package dev.hankli.sicbo.round
+package app.hankdev.sicbo.round
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import dev.hankli.sicbo.databinding.ItemRoundBinding
-import dev.hankli.sicbo.getConditionColorRes
-import dev.hankli.sicbo.getConditionStringRes
-import dev.hankli.sicbo.getDiceRes
-import dev.hankli.sicbo.model.Round
+import app.hankdev.sicbo.databinding.ItemRoundBinding
+import app.hankdev.sicbo.getConditionColorRes
+import app.hankdev.sicbo.getConditionStringRes
+import app.hankdev.sicbo.getDiceRes
+import app.hankdev.sicbo.model.Round
 
 class RoundAdapter : RecyclerView.Adapter<RoundAdapter.ViewHolder>() {
 

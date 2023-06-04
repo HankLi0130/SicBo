@@ -1,4 +1,4 @@
-package dev.hankli.sicbo
+package app.hankdev.sicbo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,10 +1,10 @@
-package dev.hankli.sicbo
+package app.hankdev.sicbo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import dev.hankli.sicbo.model.Condition
-import dev.hankli.sicbo.model.Round
+import app.hankdev.sicbo.model.Condition
+import app.hankdev.sicbo.model.Round
 
 class SharedViewModel : ViewModel() {
 

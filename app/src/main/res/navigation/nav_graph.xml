@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/roundFragment"
-        android:name="dev.hankli.sicbo.round.RoundFragment"
+        android:name="app.hankdev.sicbo.round.RoundFragment"
         android:label="RoundFragment"
         tools:layout="@layout/fragment_round">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/editRoundFragment"
-        android:name="dev.hankli.sicbo.round.EditRoundFragment"
+        android:name="app.hankdev.sicbo.round.EditRoundFragment"
         android:label="EditRoundFragment"
         tools:layout="@layout/fragment_edit_round" />
 

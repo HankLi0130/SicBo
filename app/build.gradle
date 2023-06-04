@@ -6,11 +6,11 @@ plugins {
 
 android {
 
-    namespace 'dev.hankli.sicbo'
+    namespace 'app.hankdev.sicbo'
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "dev.hankli.sicbo"
+        applicationId "app.hankdev.sicbo"
         minSdkVersion 26
         targetSdkVersion 33
         versionCode 1

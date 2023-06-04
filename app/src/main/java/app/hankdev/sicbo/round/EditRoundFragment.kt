@@ -1,4 +1,4 @@
-package dev.hankli.sicbo.round
+package app.hankdev.sicbo.round
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import app.hankdev.sicbo.R
+import app.hankdev.sicbo.SharedViewModel
+import app.hankdev.sicbo.databinding.FragmentEditRoundBinding
+import app.hankdev.sicbo.getDiceRes
 import app.hankdev.toolkit.ZERO
-import dev.hankli.sicbo.R
-import dev.hankli.sicbo.SharedViewModel
-import dev.hankli.sicbo.databinding.FragmentEditRoundBinding
-import dev.hankli.sicbo.getDiceRes
 
 class EditRoundFragment : Fragment(R.layout.fragment_edit_round) {
 

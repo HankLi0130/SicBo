@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import app.hankdev.toolkit.ZERO
 import dev.hankli.sicbo.R
 import dev.hankli.sicbo.SharedViewModel
 import dev.hankli.sicbo.databinding.FragmentEditRoundBinding
 import dev.hankli.sicbo.getDiceRes
-import tw.hankli.brookray.core.constant.ZERO
 
 class EditRoundFragment : Fragment(R.layout.fragment_edit_round) {
 

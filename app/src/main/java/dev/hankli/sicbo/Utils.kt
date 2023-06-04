@@ -1,7 +1,8 @@
 package dev.hankli.sicbo
 
+import app.hankdev.toolkit.NO_RESOURCE
 import dev.hankli.sicbo.model.Condition
-import tw.hankli.brookray.core.constant.NO_RESOURCE
+
 
 fun getDiceRes(number: Int): Int {
     return when (number) {
@@ -25,8 +26,8 @@ fun getConditionStringRes(condition: Condition): Int {
 
 fun getConditionColorRes(condition: Condition): Int {
     return when (condition) {
-        Condition.SMALL -> R.color.md_green_900
-        Condition.BIG -> R.color.md_red_900
-        Condition.KILLING -> R.color.md_yellow_A700
+        Condition.SMALL -> app.hankdev.toolkit.R.color.md_green_900
+        Condition.BIG -> app.hankdev.toolkit.R.color.md_red_900
+        Condition.KILLING -> app.hankdev.toolkit.R.color.md_yellow_A700
     }
 }

@@ -4,7 +4,18 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+def props = new Properties()
+file("keystore.properties").withInputStream { props.load(it) }
+
 android {
+    signingConfigs {
+        release {
+            storeFile file(props.getProperty('storeFile'))
+            storePassword props.getProperty('storePassword')
+            keyAlias props.getProperty('keyAlias')
+            keyPassword props.getProperty('keyPassword')
+        }
+    }
 
     namespace 'app.hankdev.sicbo'
     compileSdkVersion 33
@@ -23,6 +34,21 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                // on below line we are specifying our app name.
+                project.ext { appName = 'SicBo' }
+                // on below line we are creating a new name for our apk.
+                def newName = output.outputFile.name
+                // on below line we are replacing our previous name with our app name.
+                newName = newName.replace("app-", "$project.ext.appName-")
+                // on below line we are replacing -release with our formatted date. *-release.apk
+                newName = newName.replace("-release", "-$defaultConfig.versionName-release")
+                // at last we are setting our apk name to it.
+                output.outputFileName = newName
+            }
         }
     }
 
